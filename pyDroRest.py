@@ -24,15 +24,9 @@ def home():
     return static_file('index.html', getcwd()+'/html')
 
 
-@route('/<filename:path>')
-def send_static(filename):
-    return static_file(filename, getcwd())
-
-
-@route('/<filename:path>')
-def send_static(filename):
-    return static_file(filename, getcwd())
-
+@app.route('/static/<filename:path>')
+def server_static(filename):
+    return static_file(filename, root=getcwd()+'/static')
 
 
 @app.route('/droPyRest/v0.1/front', methods=['GET'])

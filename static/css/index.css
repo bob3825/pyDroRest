@@ -1,0 +1,51 @@
+table {
+  width: 50%;
+  border-collapse: collapse;
+}
+
+tr {
+  width: 33.333%;
+  border: 6px solid #222;
+}
+
+td {
+  width: 33.333%;
+  border: 6px solid #222;
+}
+
+td:after {
+  content: '';
+  display: block;
+  margin-top: 100%;
+}
+
+td:first-of-type {
+  border-left-color: transparent;
+  border-top-color: transparent;
+}
+
+td:nth-of-type(2) {
+  border-top-color: transparent;
+}
+
+td:nth-of-type(3) {
+  border-right-color: transparent;
+  border-top-color: transparent;
+}
+
+tr:nth-of-type(3) td {
+  border-bottom-color: transparent;
+}
+
+.spanArrow:after {
+    color: #FF0000;
+    position: absolute;
+    -webkit-box-sizing: border-box; /* <=iOS4, <= Android  2.3 */
+    -moz-box-sizing: border-box; /* FF1+ */
+    box-sizing: border-box; /* Chrome, IE8, Opera, Safari 5.1*/
+    border-top: 60px solid transparent;
+    border-bottom: 60px solid transparent;
+    border-left: 60px solid black;
+    width: 0;
+    height: 0;
+}
