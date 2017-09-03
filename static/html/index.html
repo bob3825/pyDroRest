@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<title> PyDro </title>
+
+
+<link href="../static/css/bootstrap.min.css" rel="stylesheet">
+<link href="../static/css/common.css" rel="stylesheet">
+<link href="../static/css/index.css" rel="stylesheet">
+
+<script src="../static/js/angular.js"></script>
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+<script src="../static/js/mainApp.js"></script>
+
+<body ng-app="mainApp" ng-controller="mainController">
+    <div class="wrapper">
+        <div class="box leftFront" ng-click="leftFront()">&#8598;</div>
+        <div class="box front" ng-click="front()">&#8593;</div>
+        <div class="box rightFront" ng-click="rightFront()">&#8599;</div>
+        <div class="box left" ng-click="left()">&#8592;</div>
+        <div class="box land" ng-click="land()">Land</div>
+        <div class="box right" ng-click="right()">&#8594;</div>
+        <div class="box leftBack" ng-click="leftBack()">&#8601;</div>
+        <div class="box back" ng-click="back()">&#8595;</div>
+        <div class="box rightBack" ng-click="rightBack()">&#8600;</div>
+    </div>
+    <div><span>&nbsp;</span></div>
+    <div><span>&nbsp;</span></div>
+    <div class="wrapper">
+        <div class="box up" ng-click="up()">UP</div>
+        <div class="box down" ng-click="down()">Down</div>
+        <div class="box test" ng-click="test()">{{products}}</div>
+    </div>
+</body>
+
+</html>

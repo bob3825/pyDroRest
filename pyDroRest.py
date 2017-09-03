@@ -21,7 +21,7 @@ def error404(error):
 @app.route('/droPyRest', methods=['GET'])
 @auth_basic(check)
 def home():
-    return static_file('index.html', getcwd()+'/html')
+    return static_file('index.html', getcwd()+'/static/html')
 
 
 @app.route('/static/<filename:path>')
@@ -101,4 +101,4 @@ def lift(height):
     return 'lift ' + str(height)
 
 
-run(app, host='localhost', port=1125)
+run(app, host='192.168.1.175', port=1125)
