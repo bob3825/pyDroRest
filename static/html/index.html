@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-<meta charset="utf-8">
-<title> PyDro </title>
+<html ng-app="mainApp" lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> PyDro </title>
 
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/common.css" rel="stylesheet">
+    <link href="../static/css/index.css" rel="stylesheet">
 
-<link href="../static/css/bootstrap.min.css" rel="stylesheet">
-<link href="../static/css/common.css" rel="stylesheet">
-<link href="../static/css/index.css" rel="stylesheet">
+    <script src="../static/js/angular.js"></script>
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.js"></script>
+    <script src="../static/js/angular-websocket.min.js"></script>
+    <script src="../static/js/mainApp.js"></script>
+</head>
 
-<script src="../static/js/angular.js"></script>
-<script src="../static/js/jquery.min.js"></script>
-<script src="../static/js/bootstrap.min.js"></script>
-<script src="../static/js/mainApp.js"></script>
-
-<body ng-app="mainApp" ng-controller="mainController">
+<body ng-controller="mainController">
     <div class="wrapper">
         <div class="box leftFront" ng-click="leftFront()">&#8598;</div>
         <div class="box front" ng-click="front()">&#8593;</div>

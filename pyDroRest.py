@@ -1,6 +1,7 @@
-from os import getcwd
+from os import path
 from base64 import b64decode
 from bottle import Bottle, route, run, static_file, error, auth_basic
+from pyArduino import PyArduino
 
 
 app = Bottle('pyDroRest')
@@ -18,21 +19,23 @@ def error404(error):
     return '404 Nothing here, sorry'
 
 
-@app.route('/droPyRest', methods=['GET'])
+@app.route('/pyDroRest', methods=['GET'])
 @auth_basic(check)
 def home():
-    return static_file('index.html', getcwd()+'/static/html')
+    basename = path.split(__file__)[0]
+    return static_file('index.html', root="%s/static/html" % basename)
 
 
 @app.route('/static/<filename:path>')
 def server_static(filename):
-    return static_file(filename, root=getcwd()+'/static')
+    basename = path.split(__file__)[0]
+    return static_file(filename, root="%s/static" % basename)
 
 
 @app.route('/droPyRest/v0.1/front', methods=['GET'])
 @auth_basic(check)
 def front():
-    return 'front'
+    return {'direction': 'front'}
 
 
 @app.route('/droPyRest/v0.1/back', methods=['GET'])
@@ -101,4 +104,4 @@ def lift(height):
     return 'lift ' + str(height)
 
 
-run(app, host='192.168.1.175', port=1125)
+run(app, host='localhost', port=1125)

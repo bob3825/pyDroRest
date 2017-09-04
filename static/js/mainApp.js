@@ -1,5 +1,10 @@
-var app = angular.module("mainApp", []);
-app.controller("mainController", function($scope) {
+var app = angular.module("mainApp", ['ngWebSocket']);
+
+app.config(['$httpProvider', function($httpProvider) {
+    $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
+}]);
+
+app.controller("mainController", function($scope, $http) {
     $scope.products = "Test";
 
     $scope.leftFront = function() {
@@ -7,7 +12,15 @@ app.controller("mainController", function($scope) {
     };
 
     $scope.front = function() {
-        alert('front');
+        $http.get('droPyRest/v0.1/front').then(
+            function successCallback(response) {
+                $scope.value1 = response.data['direction'];
+                alert($scope.value1);
+            },
+            function errorCallback(response) {
+                $scope.error = 'ERROR';
+            }
+        );
     };
 
     $scope.rightFront = function() {
